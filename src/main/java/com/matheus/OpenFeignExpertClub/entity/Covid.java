@@ -14,9 +14,8 @@ import java.time.LocalDateTime;
 public class Covid {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
   private Integer uid;
-  @OneToOne
+  @OneToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "state_id")
   private State state;
   private Integer cases;
